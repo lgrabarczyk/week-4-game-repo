@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The Crystal Guessing Game</title>
+
+  <!-- Bootstrap File -->
+  
+  <script src="https://code.jquery.com/jquery.js"></script>
+
+</head>
+ 
+<body>
+<div class="container">
+  <div class="title col-lg-5"><h1>Crystal Game!</h1>
+  </div>
+  <div class="col-lg-5 col-md-5 col-sm-5">
+    <div class="instructions">
+      <h3>Here's how you play the game</h3>
+    </br>
+    <ol>
+      <li>You will be given a random number at the start of the game.<span>"Number To Get."</span></li>
+      <li>There are four crystals below.</li>
+      <li>By clicking on a crystal, you will add a specific amount of points to your total score.</li>
+      <li>You win the game by matching your total score to the random number.</li>
+      <li>You lose the game if your total score goes above the random number.</li>
+      <li>The value of each crystal is hidden from you until you click on it.</li>
+      <li>Each time when the game starts, the game will change the values of each crystal.</li>
+    </ol>
+    </div>
+     
+
+<h1 class="crystalBlue-button"><img id="red" src="./assets/images/blue.jpeg"></h1>
+<h1 class="crystalRed-button"><img id="yellow" src="./assets/images/red.jpeg"></h1>
+<h1 class="crystalGreen-button"><img id="pink" src="./assets/images/green.jpeg"></h1>
+<h1 class="crystalPurple-button"><img id="purple" src="./assets/images/purple.jpeg"></h1>
+
+
+<h2 id="winner"></h2>
+<h2 id="wins"></h2>
+<h2 id="losses"></h2>
+
+
+<script>
+  console.log ("Javascript has loaded");      
+  //  .crystalBlue-button = ["blue.jpeg"];
+  //  .crystalGreen-button = ["blue.jpeg"];
+ //   .crystalPurple-button = ["blue.jpeg"];
+ //   .crystalRed-button = ["blue.jpeg"];
+  
+  var wins = 0;
+  var losses = 0;
+  var blueCrystalNumber = Math.floor(Math.random()*11)+1;
+  var redCrystalNumber = Math.floor(Math.random()*11)+1;
+  var greenCrystalNumber = Math.floor(Math.random()*11)+1;
+  var purpleCrystalNumber = Math.floor(Math.random()*11)+1;
+
+  var winner = Math.floor(Math.random()*101)+19;
+  console.log (winner);
+  var currentNumber = blueCrystalNumber + redCrystalNumber + greenCrystalNumber + purpleCrystalNumber;
+  console.log (currentNumber);
+  var userScore = 0;
+
+ //<script type="text/javascript">
+
+ //   $(document).ready(function() {
+
+
+    // computer chooses random numbers for crystals
+
+    // variable numbers/chrystals user chooses
+    
+    console.log (userScore);
+    
+    $(".crystalBlue-button").on("click", function() {
+        userScore = userScore + blueCrystalNumber;
+    
+        if (userScore<winner) {
+        document.getElementById("winner").innerHTML = "Keep on Choosing!"; 
+        console.log (userScore);
+        console.log ("choose again")}
+        
+        else if (userScore>winner) {
+        document.getElementById("winner").innerHTML = "You Lose!";
+        console.log ("you lose if it goes over")
+        userScore = 0; losses = losses + 1;
+        console.log("number of losses "+ losses)}
+    
+        else if (userScore===winner) {
+        document.getElementById("winner").innerHTML = "You Win!";
+        wins = wins + 1}
+
+        });
+    
+
+    $(".crystalPurple-button").on("click", function() {
+        userScore = userScore + redCrystalNumber;
+    
+        if (userScore<winner) {
+        document.getElementById("winner").innerHTML = "Keep on Choosing!"; 
+        console.log (userScore);
+        console.log ("choose again")}
+        
+        else if (userScore>winner) {
+        document.getElementById("winner").innerHTML = "You Lose!";
+        console.log ("you lose if it goes over")}
+  
+        else if (userScore===winner) {
+        document.getElementById("winner").innerHTML = "You Win!";
+        }
+
+
+      });
+
+      $(".crystalGreen-button").on("click", function() {
+        userScore = userScore + greenCrystalNumber;
+    
+        if (userScore<winner) {
+        document.getElementById("winner").innerHTML = "Keep on Choosing!"; 
+        console.log (userScore);
+        console.log ("choose again")}
+        
+        else if (userScore>winner) {
+        document.getElementById("winner").innerHTML = "You Lose!";
+        console.log ("you lose if it goes over")}
+  
+        else if (userScore===winner) {
+        document.getElementById("winner").innerHTML = "You Win!";
+        }
+
+        });
+    
+
+    $(".crystalRed-button").on("click", function() {
+        userScore = userScore + purpleCrystalNumber;
+    
+        if (userScore<winner) {
+        document.getElementById("winner").innerHTML = "Keep on Choosing!"; 
+        console.log (userScore);
+        console.log ("choose again")}
+        
+        else if (userScore>winner) {
+        document.getElementById("winner").innerHTML = "You Lose!";
+        console.log ("you lose if it goes over")}
+  
+        else if (userScore===winner) {
+        document.getElementById("winner").innerHTML = "You Win!";
+        }
+
+
+      });
+    //add purple and green crystals here
+   //    console.log ('userScore'); 
+   //   console.log (userScore);
+   //    console.log (winner); 
+ //   $(".crystalRed-button").animate({ height: "300px"});
+ 
+    //Add Comment Collapse
+    // $("#stop").click(function(){
+ //       $("div").stop();
+
+
+
+    document.getElementById('wins').innerHTML = wins;
+    document.getElementById('losses').innerHTML = losses;
+
+
+    //  console.log()
+    //Is this where I give the crystal blue button its random number and if so.
+    //How do I give the CrytalBlue-button the computerRandomCrystalNumber???
+    
+    // variable numbers user chooses
+    //    if (#crystals === 0) {
+     //   $("#computerRandomCrystalNumber").html;
+  //      }
+
+    
+
+
+//}
+      
+    //Each crystal chosen by player is added to the previous choice and its randomly assigned value.
+
+    //Player chooses crystals until the number is equal to or greater than the computers random choice 
+
+    //If the players choices total number adds up to more than the computers originally chosen number an alert posts that the player has lost
+
+    //The computer stores the loss and adds additonal losses
+
+    //If the players choices total is equal to the computers originally chosen random number an alert posts the player has won
+
+    //The computer stores the win and adds additonal wins
+
+    //If the player wins or loses the computer resets the game and chooses a new random number between 19-120 and it chooses a new random number for each of the four crystals.
+    // set if/else conditions to match what the user types vs. what the computer chooses.
+   
+
+
+ </script>
+
+
+</body>
+</html>
+   
+   
+

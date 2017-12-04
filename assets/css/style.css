@@ -1,0 +1,73 @@
+.title {
+	background-color: steelblue;
+	border-radius: 5px;
+
+}
+
+
+h1{
+	text-align: center;
+}
+
+
+
+.instructions{
+	border-radius: 10px;
+	background-color: #dddddd;
+	padding: 5px;
+	width: 100%;
+}
+
+#numToMatch{
+	border-radius: 10px;
+	text-align: center;
+	font-size: 30px;
+	background-color: #5DADE2;
+	width: 100px;
+	height: 50px;
+	margin-top: 4px;
+}
+
+#results{
+	border-radius: 10px;
+	background-color: #A3E4D7;
+	margin-left: 4px;
+	margin-top: 4px;
+	width: 100px;
+	height: 100px;
+}  
+
+.score-title{
+	background-color: steelblue;
+	margin-top: 4px;
+	border-radius: 5px;
+	width: 200px;
+	text-align: center;
+
+}
+
+#score-count{
+	border-radius: 10px;
+	text-align: center;
+	font-size: 30px;
+	font-style: bold;
+	background-color: #A3E4D7;
+	margin-left: 4px;
+	margin-top: 4px;
+	width: 100px;
+	height: 100px;
+	padding: 25px;
+}
+
+.crystal-images{
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+img{
+	width: 100px;
+}
+
+img:hover {
+    opacity: 0.5;
+}
